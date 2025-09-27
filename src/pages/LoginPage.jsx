@@ -32,8 +32,9 @@ export default function LoginPage() {
             navigate("/");
         })
             .catch((err) => {
-            console.log(err);
-                toast.error(err.response.data.error.message);
+                console.log(err);
+                const message = err.response?.data?.error?.message || "Something went wrong, please try again.";
+                toast.error(message);
         })
     }
     return (
